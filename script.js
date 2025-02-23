@@ -21,4 +21,14 @@ function getHumanChoice() {
     }
 }
 
+function playRound(humanChoice) {
+    const computerChoice = getComputerChoice();
 
+    if ((humanChoice === 'rock' && computerChoice == 'scissors') || (humanChoice === 'paper' && computerChoice == 'rock') || (humanChoice === 'scissors' && computerChoice == 'paper')) {
+        humanScore += 1
+    } else if ((humanChoice === 'rock' && computerChoice == 'paper') || (humanChoice === 'paper' && computerChoice == 'scissors') || (humanChoice === 'scissors' && computerChoice == 'rock')) {
+        computerScore += 1
+    }
+
+    return
+}
