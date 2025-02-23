@@ -12,7 +12,7 @@ function getComputerChoice() {
     }
 }
 function getHumanChoice() {
-    const choice = prompt('Rock, Paper or Scissors?').toLowerCase
+    const choice = prompt('Rock, Paper or Scissors?').toLowerCase()
 
     if (choice === 'rock' || choice === 'paper' || choice === 'scissors') {
         return choice
@@ -25,10 +25,20 @@ function playRound(humanChoice) {
     const computerChoice = getComputerChoice();
 
     if ((humanChoice === 'rock' && computerChoice == 'scissors') || (humanChoice === 'paper' && computerChoice == 'rock') || (humanChoice === 'scissors' && computerChoice == 'paper')) {
-        humanScore += 1
+        humanScore += 1;
     } else if ((humanChoice === 'rock' && computerChoice == 'paper') || (humanChoice === 'paper' && computerChoice == 'scissors') || (humanChoice === 'scissors' && computerChoice == 'rock')) {
-        computerScore += 1
+        computerScore += 1;
     }
 
     return
 }
+
+function playGame() {
+    for (let i = 0; i <= 5; i++) {
+        let choice = getHumanChoice();
+        playRound(choice)
+    }
+    console.log(humanScore, computerScore)
+}
+
+playGame()
